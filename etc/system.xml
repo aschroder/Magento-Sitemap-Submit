@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+	<sections>
+		<sitemap>
+			<groups>
+				<sitemapsubmit translate="label" module="sitemapsubmit">
+					<label>ASchroder.com Sitemap Submit</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>999</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>0</show_in_store>
+					<comment>ASchroder.com Sitemap Submit will submit your sitemap to all the major search engines (Google, Yahoo, Ask and Bing). 
+					You can submit manually from the Sitemap edit screen or have the extension submit the sitemap whenever it is regenerated. If you have any trouble with the extension please refer to &lt;a href='http://www.aschroder.com/2010/01/sitemap-submit-magento-extension-to-submit-your-google-sitemap/' target='_blank'&gt;instructions and help&lt;/a&gt; available on &lt;a href='http://aschroder.com' target='_blank'&gt;my blog&lt;/a&gt;</comment>
+						<fields>
+							<enabled translate="label">
+								<label>Enable Sitemap Submit</label>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>1</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+							</enabled>
+							<autosubmit translate="label">
+								<label>Submit Automatically</label>
+								<comment>Submit your sitemap to search engines automatically whenever the sitemap is regenerated.</comment>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>5</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+							</autosubmit>
+							<yahoo_key translate="label">
+								<label>Yahoo API Key</label>
+								<comment>If you do not input one of these, Yahoo will be skipped. You can get your key from &lt;a href='http://developer.yahoo.com/search/siteexplorer/V1/updateNotification.html'&gt;here&lt;/a&gt;</comment>
+								<frontend_type>text</frontend_type>
+								<sort_order>10</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>0</show_in_website>
+								<show_in_store>0</show_in_store>
+							</yahoo_key>
+						</fields>
+				</sitemapsubmit>
+			</groups>
+		</sitemap>
+	</sections>
+</config>

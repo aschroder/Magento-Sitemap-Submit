@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+	/**
+	* Magento Sitemap Submitter
+	*
+	* @package    Aschroder_SitemapSubmit
+	* @author     Ashley Schroder (aschroder.com)
+	*/
+-->
+<config>
+	<modules>
+		<Aschroder_SitemapSubmit>
+			<version>0.1</version>
+		</Aschroder_SitemapSubmit>
+	</modules>
+	<global>
+		<helpers>
+			<sitemapsubmit><class>Aschroder_SitemapSubmit_Helper</class></sitemapsubmit>
+		</helpers>
+		<models>
+            <sitemapsubmit>
+                <class>Aschroder_SitemapSubmit_Model</class>
+            </sitemapsubmit>
+            <sitemap>
+				<rewrite>
+					<sitemap>Aschroder_SitemapSubmit_Model_Sitemap</sitemap>
+				</rewrite>
+			</sitemap>
+        </models>
+		<blocks>
+			<sitemapsubmit>
+				<class>Aschroder_SitemapSubmit_Block</class>
+			</sitemapsubmit>
+			<adminhtml>
+				<rewrite>
+					<sitemap_edit>Aschroder_SitemapSubmit_Block_Sitemap_Edit</sitemap_edit>
+					<sitemap_grid_renderer_action>Aschroder_SitemapSubmit_Block_Sitemap_Grid_Renderer_Action</sitemap_grid_renderer_action>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+		<events>
+	      <sitemap_sitemap_generate>
+	        <observers>
+	          <sitemapsubmit_sitemap_save_after_observer>
+	            <type>singleton</type>
+	            <class>sitemapsubmit/observer</class>
+	            <method>submit</method>
+	          </sitemapsubmit_sitemap_save_after_observer>
+	        </observers>
+	      </sitemap_sitemap_generate>
+    	</events>
+	</global>
+	
+	<admin>
+		<routers>
+			<sitemapsubmit>
+				<use>admin</use>
+				<args>
+					<module>Aschroder_SitemapSubmit</module>
+					<frontName>sitemapsubmit</frontName>
+				</args>
+			</sitemapsubmit>
+		 </routers>
+	</admin>
+	
+	<default>
+		<sitemapsubmit>
+			<settings>
+				<enabled>0</enabled>
+			</settings>
+		</sitemapsubmit>
+	</default>
+	
+</config>
