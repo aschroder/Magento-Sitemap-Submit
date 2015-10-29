@@ -52,15 +52,15 @@
 	</global>
 	
 	<admin>
-		<routers>
-			<sitemapsubmit>
-				<use>admin</use>
-				<args>
-					<module>Aschroder_SitemapSubmit</module>
-					<frontName>sitemapsubmit</frontName>
-				</args>
-			</sitemapsubmit>
-		 </routers>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <sitemapsubmit before="Mage_Adminhtml">Aschroder_SitemapSubmit_Adminhtml</sitemapsubmit>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
 	</admin>
 	
 	<default>
